@@ -1,10 +1,13 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../data/api_service.dart';
+import '../../data/helper.dart';
 import '../../models/arguments.dart';
 import '../../utils/constanst/constants.dart';
+import '../auth_screen/sign_in_screen.dart';
 import '../chateo_group/widgets/user_list.dart';
 import '../connection.dart';
 
@@ -22,11 +25,18 @@ class UsersListScreen extends StatelessWidget {
           return NoInternetScreen();
         }
         return Scaffold(
+          backgroundColor: Colors.white,
           appBar: AppBar(
+            actions: [
+              IconButton(onPressed: (){
+                showLogoutConfirmation(context);
+              }, icon: const Icon(Icons.login,color: Colors.red,)),
+              SizedBox(width: 12,)
+            ],
             backgroundColor: Colors.white,
             elevation: 0,
             title: const Text(
-              "Чаты",
+              "Chats",
               style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
             ),
           ),
@@ -59,4 +69,41 @@ class UsersListScreen extends StatelessWidget {
       },
     );
   }
+  showLogoutConfirmation(BuildContext context) {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext context) {
+        return CupertinoActionSheet(
+          title: Text('Confirm Logout'),
+          message: Text('Are you sure you want to log out?'),
+          actions: <Widget>[
+            CupertinoActionSheetAction(
+              onPressed: () {
+                Navigator.pop(context); // Close the dialog
+              },
+              child: Text('Cancel'),
+            ),
+            CupertinoActionSheetAction(
+              onPressed: () async {
+                // Perform logout actions here
+                await Helper.instance.signOutGoogle();
+                await FirebaseAuth.instance.signOut().then(
+                      (value) => Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignInScreen(),
+                    ),
+                        (route) => false,
+                  ),
+                );
+                Navigator.pop(context); // Close the dialog
+              },
+              child: Text('Logout', style: TextStyle(color: CupertinoColors.destructiveRed)),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
 }
