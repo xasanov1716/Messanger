@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "310620594518",
+    "project_id": "message-d4682",
+    "storage_bucket": "message-d4682.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310620594518:android:478a32572c4fc11be7f6f7",
+        "android_client_info": {
+          "package_name": "com.app.message.uz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWjSqvTzO5UrRNEvWekm4FoVWmXUmUwao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
