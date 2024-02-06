@@ -41,7 +41,7 @@ class SignInScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                "Welcome Back to Chateo",
+                "Welcome Back to Messanger",
                 style: UzchatStyle.w500.copyWith(
                   fontSize: 30.0,
                   color: Colors.green.
