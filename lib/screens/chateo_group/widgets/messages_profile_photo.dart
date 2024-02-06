@@ -20,8 +20,8 @@ class MessageProfilPhoto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(3.0),
-      margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
+      padding: const EdgeInsets.all(3.0),
+      margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6.0),
         color: isMe
@@ -42,6 +42,8 @@ class MessageProfilPhoto extends StatelessWidget {
                 height: 40.0,
                 fit: BoxFit.cover,
                 placeholder: (context, url) => Shimmer.fromColors(
+                  baseColor: UzchatColors.colorMilk,
+                  highlightColor: UzchatColors.colorGrey.withOpacity(.2),
                   child: Container(
                     width: 40.0,
                     height: 40.0,
@@ -50,8 +52,6 @@ class MessageProfilPhoto extends StatelessWidget {
                       color: UzchatColors.colorBlack,
                     ),
                   ),
-                  baseColor: UzchatColors.colorMilk,
-                  highlightColor: UzchatColors.colorGrey.withOpacity(.2),
                 ),
               ),
             ),

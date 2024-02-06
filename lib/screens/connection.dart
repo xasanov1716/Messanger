@@ -8,8 +8,8 @@ class NoInternetScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async => false,
-      child: Scaffold(
-        body: Center(
+      child: const Scaffold(
+        body: const Center(
           child: Text('No internet'),
         ),
       ),

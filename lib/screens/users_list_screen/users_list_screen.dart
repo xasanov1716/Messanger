@@ -22,7 +22,7 @@ class UsersListScreen extends StatelessWidget {
       stream: Connectivity().onConnectivityChanged,
       builder: (context, snapshot) {
         if (snapshot.data == ConnectivityResult.none) {
-          return NoInternetScreen();
+          return const NoInternetScreen();
         }
         return Scaffold(
           backgroundColor: Colors.white,
@@ -31,7 +31,7 @@ class UsersListScreen extends StatelessWidget {
               IconButton(onPressed: (){
                 showLogoutConfirmation(context);
               }, icon: const Icon(Icons.login,color: Colors.red,)),
-              SizedBox(width: 12,)
+              const SizedBox(width: 12,)
             ],
             backgroundColor: Colors.white,
             elevation: 0,
@@ -74,14 +74,14 @@ class UsersListScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return CupertinoActionSheet(
-          title: Text('Confirm Logout'),
-          message: Text('Are you sure you want to log out?'),
+          title: const Text('Confirm Logout'),
+          message: const Text('Are you sure you want to log out?'),
           actions: <Widget>[
             CupertinoActionSheetAction(
               onPressed: () {
                 Navigator.pop(context); // Close the dialog
               },
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             CupertinoActionSheetAction(
               onPressed: () async {
@@ -98,7 +98,7 @@ class UsersListScreen extends StatelessWidget {
                 );
                 Navigator.pop(context); // Close the dialog
               },
-              child: Text('Logout', style: TextStyle(color: CupertinoColors.destructiveRed)),
+              child: const Text('Logout', style: TextStyle(color: CupertinoColors.destructiveRed)),
             ),
           ],
         );

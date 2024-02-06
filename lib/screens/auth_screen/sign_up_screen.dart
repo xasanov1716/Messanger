@@ -4,7 +4,6 @@ import 'package:lottie/lottie.dart';
 import '../../data/api_service.dart';
 import '../../utils/constanst/constants.dart';
 import '../../utils/icons/icons.dart';
-import '../../utils/style/style.dart';
 import '../../widgets/global_buttons.dart';
 import 'widgets/auth_buttons.dart';
 import 'widgets/sign_google_button.dart';
@@ -24,27 +23,27 @@ class SignUpScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Text("Sign Up", style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600)),
+        title: const Text("Sign Up", style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600)),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50.0,
             ),
             Lottie.asset(
               UzchatIcons.sign,
               height: 200,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             AuthFields(
               controller: nameController,
               hintText: 'Name', keyboardType: TextInputType.name, textInputAction: TextInputAction.next, prefixIcon: Icons.person, caption: '',
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             AuthFields(
@@ -52,7 +51,7 @@ class SignUpScreen extends StatelessWidget {
               hintText: 'Email',
               keyboardType: TextInputType.emailAddress, textInputAction: TextInputAction.next, prefixIcon: Icons.email, caption: '',
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             AuthFields(
@@ -60,7 +59,7 @@ class SignUpScreen extends StatelessWidget {
               hintText: 'Password',
               keyboardType: TextInputType.visiblePassword, textInputAction: TextInputAction.done, prefixIcon: Icons.key, caption: '',
             ),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
             GlobalButton(
@@ -71,7 +70,7 @@ class SignUpScreen extends StatelessWidget {
                     emailController.text.isEmpty ||
                     passWordController.text.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Please fill all fields')),
+                    const SnackBar(content: Text('Please fill all fields')),
                   );
                   return;
                 }
@@ -87,13 +86,13 @@ class SignUpScreen extends StatelessWidget {
                 print(s.toString());
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             TextButton(
               onPressed: () => Navigator.pushReplacementNamed(
                   context, Constants.signInScreen),
-              child: Text("Do you have already an account?"),
+              child: const Text("Do you have already an account?"),
             ),
             SignGoogleButton(
               apiService: apiService,

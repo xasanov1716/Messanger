@@ -37,22 +37,22 @@ class _AuthFieldsState extends State<AuthFields> {
               padding: const EdgeInsets.only(top: 4.0),
               child: Text(
                 widget.caption,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   color: Colors.black,
                 ),
               ),
             ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           TextField(
-            style: TextStyle(color: Colors.black),
+            style: const TextStyle(color: Colors.black),
             controller: widget.controller,
             decoration: InputDecoration(
 // contentPadding: EdgeInsets.only(left: 16,top: 12,right: 20,bottom: 60),
               hintText: widget.hintText,
-              hintStyle: TextStyle(color: Colors.grey),
+              hintStyle: const TextStyle(color: Colors.grey),
               prefixIcon: Icon(
                 widget.prefixIcon,
                 color: Colors.grey,
@@ -74,19 +74,19 @@ class _AuthFieldsState extends State<AuthFields> {
                     )
                   : null,
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey, width: 1),
+                borderSide: const BorderSide(color: Colors.grey, width: 1),
                 borderRadius: BorderRadius.circular(16),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey, width: 1),
+                borderSide: const BorderSide(color: Colors.grey, width: 1),
                 borderRadius: BorderRadius.circular(16),
               ),
               errorBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.red, width: 1),
+                borderSide: const BorderSide(color: Colors.red, width: 1),
                 borderRadius: BorderRadius.circular(16),
               ),
               border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey, width: 1),
+                borderSide: const BorderSide(color: Colors.grey, width: 1),
                 borderRadius: BorderRadius.circular(16),
               ),
 // filled: true,

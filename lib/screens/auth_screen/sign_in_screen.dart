@@ -31,7 +31,7 @@ class SignInScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
             Lottie.asset(
@@ -54,12 +54,12 @@ class SignInScreen extends StatelessWidget {
               controller: emailController,
               hintText: 'Email', keyboardType: TextInputType.emailAddress, textInputAction: TextInputAction.next, prefixIcon: Icons.email, caption: '',
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             AuthFields(
               controller: passWordController,
               hintText: 'Password', keyboardType: TextInputType.visiblePassword, textInputAction: TextInputAction.done, prefixIcon: Icons.key, caption: '',
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             GlobalButton(
@@ -76,15 +76,15 @@ class SignInScreen extends StatelessWidget {
                 );
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             TextButton(
               onPressed: () => Navigator.pushReplacementNamed(
                   context, Constants.signUpScreen),
-              child: Text("Don't have an account?",style: TextStyle(color: Colors.red),),
+              child: const Text("Don't have an account?",style: TextStyle(color: Colors.red),),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
             SignGoogleButton(apiService: apiService)
